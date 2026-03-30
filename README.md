@@ -1,9 +1,9 @@
 # Angular SSR Hello World Recipe App
 
-<!--#ZEROPS_EXTRACT_START:intro#-->
+<!-- #ZEROPS_EXTRACT_START:intro# -->
 A server-side rendered [Angular](https://angular.dev) application using `@angular/ssr` and Express, connected to a PostgreSQL database. Demonstrates idempotent migrations, dynamic health check data queried from the database, and Angular's SSR pipeline on a Node.js runtime.
 Used within [Angular SSR Hello World recipe](https://app.zerops.io/recipes/angular-ssr-hello-world) for [Zerops](https://zerops.io) platform.
-<!--#ZEROPS_EXTRACT_END:intro#-->
+<!-- #ZEROPS_EXTRACT_END:intro# -->
 
 ⬇️ **Full recipe page and deploy with one-click**
 

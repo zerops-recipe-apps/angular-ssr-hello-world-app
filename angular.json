@@ -19,12 +19,18 @@
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "server": "src/main.server.ts",
+            "outputMode": "server",
             "ssr": {
               "entry": "server.ts"
             },
             "prerender": false,
-            "assets": [],
-            "styles": [],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": ["public/status-page.css"],
             "scripts": []
           },
           "configurations": {
@@ -65,5 +71,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

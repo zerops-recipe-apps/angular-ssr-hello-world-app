@@ -1,7 +1,21 @@
 {
-  "name": "angular-ssr-hello-world",
-  "version": "0.0.0",
+  "name": "angular-ssr-hello-world-app",
+  "version": "1.0.0",
+  "description": "Angular SSR app with Express and PostgreSQL on Zerops nodejs@22",
+  "author": "Zerops",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zerops-recipe-apps/angular-ssr-hello-world-app"
+  },
+  "homepage": "https://github.com/zerops-recipe-apps/angular-ssr-hello-world-app",
+  "bugs": {
+    "url": "https://github.com/zerops-recipe-apps/angular-ssr-hello-world-app/issues"
+  },
   "private": true,
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,28 +23,40 @@
     "watch": "ng build --watch --configuration development"
   },
   "dependencies": {
-    "@angular/animations": "^19.2.0",
-    "@angular/common": "^19.2.0",
-    "@angular/compiler": "^19.2.0",
-    "@angular/core": "^19.2.0",
-    "@angular/forms": "^19.2.0",
-    "@angular/platform-browser": "^19.2.0",
-    "@angular/platform-server": "^19.2.0",
-    "@angular/router": "^19.2.0",
-    "@angular/ssr": "^19.2.0",
-    "express": "^4.21.0",
-    "rxjs": "~7.8.0",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.15.0",
-    "pg": "^8.13.0"
+    "@angular/animations": "22.0.8",
+    "@angular/common": "22.0.8",
+    "@angular/compiler": "22.0.8",
+    "@angular/core": "22.0.8",
+    "@angular/forms": "22.0.8",
+    "@angular/platform-browser": "22.0.8",
+    "@angular/platform-server": "22.0.8",
+    "@angular/router": "22.0.8",
+    "@angular/ssr": "22.0.8",
+    "express": "4.22.2",
+    "pg": "8.22.0",
+    "rxjs": "7.8.2",
+    "tslib": "2.8.1",
+    "zone.js": "0.16.2"
   },
   "devDependencies": {
-    "@angular/build": "^19.2.0",
-    "@angular/cli": "^19.2.0",
-    "@angular/compiler-cli": "^19.2.0",
-    "@types/express": "^4.17.21",
-    "@types/node": "^22.0.0",
-    "@types/pg": "^8.11.0",
-    "typescript": "~5.7.0"
-  }
+    "@angular/build": "22.0.8",
+    "@angular/cli": "22.0.8",
+    "@angular/compiler-cli": "22.0.8",
+    "@types/express": "5.0.6",
+    "@types/node": "26.1.1",
+    "@types/pg": "8.20.0",
+    "typescript": "6.0.3"
+  },
+  "overrides": {
+    "minimatch": "10.2.6",
+    "brace-expansion": "5.0.8",
+    "@hono/node-server": "2.0.12"
+  },
+  "keywords": [
+    "angular",
+    "zerops",
+    "ssr",
+    "express",
+    "postgresql"
+  ]
 }

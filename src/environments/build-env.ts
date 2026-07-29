@@ -1,7 +1,7 @@
-// Default values — overwritten by scripts/generate-build-env.js in buildCommands.
-// These placeholders are used when running in development without running
-// the generate script first. The build pipeline always overwrites this file.
+// Auto-generated at build time by scripts/generate-build-env.js.
+// Do not edit — this file is overwritten on every build.
 export const BUILD_ENV = {
-  version: 'dev',
-  buildTime: new Date().toISOString(),
+  version: '22.0.8',
+  buildTime: '2026-07-29T09:38:54.600Z',
+  environment: 'development',
 };

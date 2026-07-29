@@ -24,6 +24,9 @@ zerops:
   - setup: prod
     build:
       base: nodejs@22
+      # Ubuntu provides the glibc Rollup/esbuild binary needed by the
+      # Angular CLI build. Runtime deps (Express, pg) are pure JS.
+      os: ubuntu
 
       buildCommands:
         # npm ci installs exact versions from package-lock.json —
@@ -35,7 +38,7 @@ zerops:
         - node scripts/generate-build-env.js
         # Angular CLI compiles client + server bundles via esbuild.
         # Output: dist/angular-ssr-hello-world/{browser,server}/
-        - npx ng build
+        - npm run build
 
       deployFiles:
         # Angular SSR (Express) is NOT self-contained — the server bundle

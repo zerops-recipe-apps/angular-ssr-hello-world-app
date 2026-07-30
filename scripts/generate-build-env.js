@@ -13,6 +13,7 @@ const content = `// Auto-generated at build time by scripts/generate-build-env.j
 export const BUILD_ENV = {
   version: '${angPkg.version}',
   buildTime: '${new Date().toISOString()}',
+  environment: '${process.env.NODE_ENV || 'development'}',
 };
 `;
 

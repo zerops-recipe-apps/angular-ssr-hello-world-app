@@ -7,6 +7,8 @@ import {
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
 import express from 'express';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { Pool } from 'pg';
 
 import { BUILD_ENV } from './src/environments/build-env';
@@ -122,6 +124,18 @@ function renderStatusHtml(
 
 function createApp(): express.Express {
   const server = express();
+  const serverDistFolder = dirname(fileURLToPath(import.meta.url));
+  const browserDistFolder = join(serverDistFolder, '../browser');
+
+  // Serve built browser assets (logos, status-page.css, favicon) before
+  // route handlers — the custom GET / HTML references these by filename.
+  server.use(
+    express.static(browserDistFolder, {
+      maxAge: '1y',
+      index: false,
+    })
+  );
+
   const angularApp = new AngularNodeAppEngine();
 
   server.get('/api/status', async (_req, res) => {

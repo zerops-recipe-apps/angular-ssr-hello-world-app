@@ -24,4 +24,4 @@ Angular 22 SSR app with Express server and PostgreSQL on Zerops nodejs@24, using
 - Default Angular SSR port is `4000` (not 3000); `PORT: 4000` is set explicitly in envVariables.
 - `scripts/generate-build-env.js` writes `src/environments/build-env.ts` at build time; esbuild inlines it into `server.mjs`.
 - `server.ts` handles GET `/` directly (health + DB status); Angular `CommonEngine` handles all other routes.
-- Static assets (favicon) live in `public/` and are copied to the build output by the Angular CLI.
+- `server.ts` serves `dist/.../browser/` via `express.static` — logos and `status-page.css` live there after build.

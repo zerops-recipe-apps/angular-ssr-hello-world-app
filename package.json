@@ -1,7 +1,7 @@
 {
   "name": "angular-ssr-hello-world-app",
   "version": "1.0.0",
-  "description": "Angular SSR app with Express and PostgreSQL on Zerops nodejs@22",
+  "description": "Angular SSR app with Express and PostgreSQL on Zerops nodejs@24",
   "author": "Zerops",
   "license": "MIT",
   "repository": {
@@ -14,7 +14,7 @@
   },
   "private": true,
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=24.0.0"
   },
   "scripts": {
     "ng": "ng",

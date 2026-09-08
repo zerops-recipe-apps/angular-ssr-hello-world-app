@@ -4,7 +4,7 @@
 zerops:
   - setup: prod
     build:
-      base: nodejs@22
+      base: nodejs@24
       # Ubuntu provides the glibc Rollup/esbuild binary needed by the
       # Angular CLI build. Runtime deps (Express, pg) are pure JS.
       os: ubuntu
@@ -12,7 +12,7 @@ zerops:
       buildCommands:
         # npm ci installs exact versions from package-lock.json —
         # deterministic builds, no unexpected dep upgrades.
-        - npm ci
+        - npm ci --include=dev
         # Generate src/environments/build-env.ts with the actual Angular
         # version and build timestamp — esbuild inlines this into server.mjs
         # at build time so no extra file is needed at runtime.
@@ -46,7 +46,7 @@ zerops:
           path: /
 
     run:
-      base: nodejs@22
+      base: nodejs@24
 
       # Migration runs once per deploy version across all containers.
       # initCommands — not buildCommands — so schema and code change
@@ -76,7 +76,7 @@ zerops:
 
   - setup: dev
     build:
-      base: nodejs@22
+      base: nodejs@24
       # Ubuntu gives a richer toolset (git, editors, debuggers)
       # for interactive development via SSH.
       os: ubuntu
@@ -94,7 +94,7 @@ zerops:
         - node_modules
 
     run:
-      base: nodejs@22
+      base: nodejs@24
       os: ubuntu
 
       # Migration still runs in dev so the database is ready
